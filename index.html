@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaishnavi Gawande - Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        
+        /* Custom Animation for Fade In Up */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            850: '#172033', /* Custom dark shade */
+                            900: '#0f172a',
+                            950: '#020617', /* Deepest background */
+                        },
+                        indigo: {
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            900: '#312e81',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-950 text-slate-200 antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6 bg-transparent border-b border-transparent">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#home" class="text-2xl font-bold text-indigo-400 tracking-tighter hover:text-indigo-300 transition-colors">
+                VG<span class="text-slate-200">.</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-sm font-medium text-slate-400 hover:text-indigo-400 transition-colors" data-section="home">Home</a>
+                <a href="#about" class="nav-link text-sm font-medium text-slate-400 hover:text-indigo-400 transition-colors" data-section="about">About</a>
+                <a href="#skills" class="nav-link text-sm font-medium text-slate-400 hover:text-indigo-400 transition-colors" data-section="skills">Skills</a>
+                <a href="#experience" class="nav-link text-sm font-medium text-slate-400 hover:text-indigo-400 transition-colors" data-section="experience">Experience</a>
+                <a href="#projects" class="nav-link text-sm font-medium text-slate-400 hover:text-indigo-400 transition-colors" data-section="projects">Projects</a>
+                <a href="#contact" class="nav-link text-sm font-medium text-slate-400 hover:text-indigo-400 transition-colors" data-section="contact">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-200 focus:outline-none hover:text-indigo-400 transition-colors">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-slate-900 border-t border-slate-800 shadow-xl py-4 px-4 flex flex-col space-y-4">
+            <a href="#home" class="mobile-link text-slate-400 hover:text-indigo-400 font-medium py-2 border-b border-slate-800">Home</a>
+            <a href="#about" class="mobile-link text-slate-400 hover:text-indigo-400 font-medium py-2 border-b border-slate-800">About</a>
+            <a href="#skills" class="mobile-link text-slate-400 hover:text-indigo-400 font-medium py-2 border-b border-slate-800">Skills</a>
+            <a href="#experience" class="mobile-link text-slate-400 hover:text-indigo-400 font-medium py-2 border-b border-slate-800">Experience</a>
+            <a href="#projects" class="mobile-link text-slate-400 hover:text-indigo-400 font-medium py-2 border-b border-slate-800">Projects</a>
+            <a href="#contact" class="mobile-link text-slate-400 hover:text-indigo-400 font-medium py-2">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-slate-950">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+            <div class="flex flex-col md:flex-row items-center">
+                <!-- Text Content -->
+                <div class="md:w-3/5 text-center md:text-left mb-12 md:mb-0">
+                    <div class="inline-flex items-center px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-sm font-medium mb-6 animate-fade-in-up border border-indigo-500/20">
+                        <span class="w-2 h-2 rounded-full bg-indigo-400 mr-2 shadow-[0_0_10px_rgba(129,140,248,0.5)]"></span>
+                        Available for Opportunities
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                        Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-violet-400">Vaishnavi Gawande</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-slate-400 mb-8 font-light">
+                        Junior QA Engineer | Manual, API & AI Automation
+                    </p>
+                    <p class="text-slate-500 text-lg max-w-lg mx-auto md:mx-0 mb-10 leading-relaxed">
+                        Bridging the gap between manual precision and AI-driven efficiency. 
+                        Expert in delivering bug-free ERP & AIMS solutions.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#projects" class="px-8 py-3 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-500 transition-colors shadow-lg shadow-indigo-500/30 flex items-center justify-center">
+                            View Projects <i data-lucide="chevron-down" class="ml-2 w-4 h-4"></i>
+                        </a>
+                        <a href="mailto:vaishubgawande@gmail.com" class="px-8 py-3 bg-slate-900 text-slate-200 border border-slate-700 rounded-lg font-medium hover:bg-slate-800 transition-colors flex items-center justify-center">
+                            <i data-lucide="mail" class="mr-2 w-4 h-4 text-indigo-400"></i> Contact Me
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Visual Content -->
+                <div class="md:w-2/5 flex justify-center relative">
+                    <div class="relative w-72 h-72 md:w-96 md:h-96">
+                        <!-- Pulsing Background -->
+                        <div class="absolute inset-0 bg-indigo-500 rounded-full opacity-10 animate-pulse"></div>
+                        
+                        <!-- Main Card -->
+                        <div class="absolute inset-4 bg-slate-900 rounded-2xl shadow-2xl flex items-center justify-center border border-slate-800 overflow-hidden p-6">
+                            <div class="grid grid-cols-2 gap-4 w-full h-full opacity-100">
+                                <div class="bg-blue-500/10 rounded-xl flex items-center justify-center flex-col text-blue-400 p-4 border border-blue-500/20">
+                                    <i data-lucide="bug" class="w-8 h-8 mb-2"></i>
+                                    <span class="text-xs font-bold">Manual</span>
+                                </div>
+                                <div class="bg-emerald-500/10 rounded-xl flex items-center justify-center flex-col text-emerald-400 p-4 border border-emerald-500/20">
+                                    <i data-lucide="check-circle-2" class="w-8 h-8 mb-2"></i>
+                                    <span class="text-xs font-bold">Verified</span>
+                                </div>
+                                <div class="bg-violet-500/10 rounded-xl flex items-center justify-center flex-col text-violet-400 p-4 col-span-2 border border-violet-500/20">
+                                    <i data-lucide="cpu" class="w-8 h-8 mb-2"></i>
+                                    <span class="text-xs font-bold">AI Automation (TestRigor)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badges -->
+                        <div class="absolute -top-4 -right-4 bg-slate-800 p-3 rounded-xl shadow-lg shadow-black/20 border border-slate-700 flex items-center gap-2 animate-bounce" style="animation-duration: 3s;">
+                            <div class="w-3 h-3 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></div>
+                            <span class="text-xs font-bold text-slate-200">0 Defects</span>
+                        </div>
+                        <div class="absolute -bottom-4 -left-4 bg-slate-800 p-3 rounded-xl shadow-lg shadow-black/20 border border-slate-700 flex items-center gap-2 animate-bounce" style="animation-duration: 4s;">
+                            <i data-lucide="database" class="w-4 h-4 text-indigo-400"></i>
+                            <span class="text-xs font-bold text-slate-200">SQL Expert</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-slate-950">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white">About Me</h2>
+                <div class="w-16 h-1 bg-indigo-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+            <div class="bg-slate-900 rounded-2xl p-8 md:p-10 border border-slate-800 shadow-sm hover:shadow-indigo-500/10 transition-all">
+                <p class="text-lg text-slate-400 leading-relaxed mb-6">
+                    Detail-oriented Quality Analyst with 2 years of experience in Manual and API Testing, specializing in ERP and AIMS domains. Proficient in the Software Testing Life Cycle (STLC) and Defect Life Cycle. Recently expanded technical expertise into AI-driven automation, with hands-on experience using TestRigor to build codeless automation suites.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    <div class="flex items-start">
+                        <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 mt-1 mr-4 shrink-0 border border-indigo-500/20">
+                            <i data-lucide="code-2" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white">Dual Expertise</h3>
+                            <p class="text-sm text-slate-500 mt-1">Blending manual testing precision with modern AI automation tools.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 mt-1 mr-4 shrink-0 border border-emerald-500/20">
+                            <i data-lucide="database" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white">Backend Validation</h3>
+                            <p class="text-sm text-slate-500 mt-1">Strong command over SQL for deep-dive data verification.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-slate-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white">Technical Arsenal</h2>
+                <p class="text-slate-400 mt-4">Tools and technologies I use to ensure quality.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testing Skills -->
+                <div class="bg-slate-800 p-6 rounded-xl shadow-lg shadow-black/10 border border-slate-700 hover:border-indigo-500/30 transition-all hover:shadow-indigo-500/10">
+                    <div class="flex items-center mb-6">
+                        <div class="p-3 rounded-lg bg-blue-500/10 text-blue-400 mr-4 border border-blue-500/20">
+                            <i data-lucide="bug" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Core Testing</h3>
+                    </div>
+                    <ul class="space-y-3 text-slate-400 text-sm">
+                        <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 text-blue-400 mr-2 shrink-0"></i>Manual Testing</li>
+                        <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 text-blue-400 mr-2 shrink-0"></i>API Testing (Postman)</li>
+                        <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 text-blue-400 mr-2 shrink-0"></i>Selenium WebDriver</li>
+                        <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 text-blue-400 mr-2 shrink-0"></i>Smoke & Regression</li>
+                        <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 text-blue-400 mr-2 shrink-0"></i>AI Automation (TestRigor)</li>
+                    </ul>
+                </div>
+
+                <!-- Code & Data -->
+                <div class="bg-slate-800 p-6 rounded-xl shadow-lg shadow-black/10 border border-slate-700 hover:border-indigo-500/30 transition-all hover:shadow-indigo-500/10">
+                    <div class="flex items-center mb-6">
+                        <div class="p-3 rounded-lg bg-indigo-500/10 text-indigo-400 mr-4 border border-indigo-500/20">
+                            <i data-lucide="terminal" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Code & Data</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Languages</h4>
+                            <ul class="space-y-2 text-slate-400 text-sm">
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-indigo-400 rounded-full mr-2"></span>SQL</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-indigo-400 rounded-full mr-2"></span>Python</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-indigo-400 rounded-full mr-2"></span>Basic C++</li>
+                            </ul>
+                        </div>
+                        <div class="pt-4 border-t border-slate-700">
+                            <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Database</h4>
+                            <ul class="space-y-2 text-slate-400 text-sm">
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-indigo-400 rounded-full mr-2"></span>MySQL</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-indigo-400 rounded-full mr-2"></span>Sub-queries</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-indigo-400 rounded-full mr-2"></span>DDL / DML</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="bg-slate-800 p-6 rounded-xl shadow-lg shadow-black/10 border border-slate-700 hover:border-indigo-500/30 transition-all hover:shadow-indigo-500/10">
+                    <div class="flex items-center mb-6">
+                        <div class="p-3 rounded-lg bg-violet-500/10 text-violet-400 mr-4 border border-violet-500/20">
+                            <i data-lucide="server" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Tools & Utils</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm font-medium hover:bg-slate-600 transition-colors">Postman</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm font-medium hover:bg-slate-600 transition-colors">Quick Scrum</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm font-medium hover:bg-slate-600 transition-colors">Maven</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm font-medium hover:bg-slate-600 transition-colors">TestNG</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm font-medium hover:bg-slate-600 transition-colors">Eclipse</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm font-medium hover:bg-slate-600 transition-colors">Basic HTML</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm font-medium hover:bg-slate-600 transition-colors">XML/JSON Handling</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-slate-950">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white">Professional Journey</h2>
+            </div>
+
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-4 md:left-1/2 h-full w-0.5 bg-slate-800 transform -translate-x-1/2"></div>
+
+                <!-- Experience Item -->
+                <div class="relative mb-12">
+                    <div class="flex flex-col md:flex-row items-start">
+                        <!-- Dot -->
+                        <div class="absolute left-4 md:left-1/2 w-4 h-4 bg-indigo-500 rounded-full border-4 border-slate-950 shadow-[0_0_0_4px_rgba(30,41,59,1)] transform -translate-x-1/2 mt-1.5 z-10"></div>
+                        
+                        <!-- Mobile Date -->
+                        <div class="md:hidden ml-12 mb-2 text-sm font-bold text-indigo-400">
+                            Aug 2023 – Present
+                        </div>
+
+                        <!-- Left Side (Company Info) -->
+                        <div class="md:w-1/2 md:pr-12 md:text-right hidden md:block">
+                            <h3 class="text-xl font-bold text-white">Micropro Software Solutions Ltd.</h3>
+                            <p class="text-lg text-indigo-400 font-medium">Junior QA Engineer</p>
+                            <p class="text-sm text-slate-500 mb-4">Nagpur</p>
+                        </div>
+
+                        <!-- Right Side (Details) -->
+                        <div class="ml-12 md:ml-0 md:w-1/2 md:pl-12">
+                            <!-- Mobile Header -->
+                            <div class="md:hidden mb-4">
+                                <h3 class="text-xl font-bold text-white">Micropro Software Solutions Ltd.</h3>
+                                <p class="text-lg text-slate-300 font-medium">Junior QA Engineer</p>
+                            </div>
+                            
+                            <!-- Desktop Date -->
+                            <div class="hidden md:block text-sm font-bold text-indigo-400 mb-4">
+                                Aug 2023 – Present
+                            </div>
+
+                            <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:border-indigo-500/30 transition-colors shadow-md">
+                                <h4 class="font-bold text-slate-200 mb-3 flex items-center">
+                                    <i data-lucide="cpu" class="w-4 h-4 mr-2 text-violet-400"></i>
+                                    Key Contributions
+                                </h4>
+                                <ul class="space-y-3 text-slate-400 text-sm">
+                                    <li class="flex items-start"><span class="w-1.5 h-1.5 bg-slate-600 rounded-full mt-1.5 mr-2 shrink-0"></span>Leveraged TestRigor to implement codeless automation, creating executable specifications in plain English.</li>
+                                    <li class="flex items-start"><span class="w-1.5 h-1.5 bg-slate-600 rounded-full mt-1.5 mr-2 shrink-0"></span>Reduced script maintenance time by utilizing AI self-healing capabilities for element locators.</li>
+                                    <li class="flex items-start"><span class="w-1.5 h-1.5 bg-slate-600 rounded-full mt-1.5 mr-2 shrink-0"></span>Executed manual test cases and performed API testing using Postman.</li>
+                                    <li class="flex items-start"><span class="w-1.5 h-1.5 bg-slate-600 rounded-full mt-1.5 mr-2 shrink-0"></span>Validated Mprosuite ERP application (Employee Shift & Performance Reporting).</li>
+                                    <li class="flex items-start"><span class="w-1.5 h-1.5 bg-slate-600 rounded-full mt-1.5 mr-2 shrink-0"></span>Performed backend testing using SQL Select queries, Joins, and Grouping functions.</li>
+                                    <li class="flex items-start"><span class="w-1.5 h-1.5 bg-slate-600 rounded-full mt-1.5 mr-2 shrink-0"></span>Logged and tracked defects using Quick Scrum.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-slate-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white">Featured Projects</h2>
+                <p class="text-slate-400 mt-4">Solving complex problems through rigorous testing.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-lg shadow-black/10 border border-slate-700 flex flex-col hover:shadow-indigo-500/10 transition-all duration-300 group">
+                    <div class="p-8 flex-grow">
+                        <div class="mb-4">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-indigo-400 transition-colors">Mprosuite (ERP Domain)</h3>
+                            <div class="flex flex-wrap items-center gap-2 mt-2">
+                                <span class="inline-block bg-indigo-500/10 text-indigo-300 text-xs font-bold px-2 py-1 rounded border border-indigo-500/20">Quality Analyst</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-400 mb-6 leading-relaxed">
+                            A comprehensive web-based ERP management software designed to streamline business processes and enhance team performance analysis.
+                        </p>
+                        <div class="space-y-3">
+                            <h4 class="text-sm font-bold text-slate-300">My Contributions:</h4>
+                            <div class="flex items-start text-sm text-slate-500">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 mr-2 shrink-0 mt-0.5"></i>
+                                Validated reporting logic enabling accurate performance metrics.
+                            </div>
+                            <div class="flex items-start text-sm text-slate-500">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 mr-2 shrink-0 mt-0.5"></i>
+                                Handled UI validations including Dropdowns, Pop-ups, and Excel file uploads/downloads.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950/30 px-8 py-4 border-t border-slate-700">
+                        <span class="text-xs font-medium text-slate-500">Domain: ERP Systems</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-lg shadow-black/10 border border-slate-700 flex flex-col hover:shadow-indigo-500/10 transition-all duration-300 group">
+                    <div class="p-8 flex-grow">
+                        <div class="mb-4">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-indigo-400 transition-colors">AIMS</h3>
+                            <div class="flex flex-wrap items-center gap-2 mt-2">
+                                <span class="inline-block bg-indigo-500/10 text-indigo-300 text-xs font-bold px-2 py-1 rounded border border-indigo-500/20">Quality Analyst</span>
+                                <span class="text-xs text-slate-500 font-medium">at Micropro Software Solutions Ltd.</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-400 mb-6 leading-relaxed">
+                            A centralized information management system tailored for efficient data tracking and organizational resource planning.
+                        </p>
+                        <div class="space-y-3">
+                            <h4 class="text-sm font-bold text-slate-300">My Contributions:</h4>
+                            <div class="flex items-start text-sm text-slate-500">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 mr-2 shrink-0 mt-0.5"></i>
+                                Conducted end-to-end functional testing of key modules.
+                            </div>
+                            <div class="flex items-start text-sm text-slate-500">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 mr-2 shrink-0 mt-0.5"></i>
+                                Ensured strict adherence to business requirements and UI/UX standards.
+                            </div>
+                            <div class="flex items-start text-sm text-slate-500">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 mr-2 shrink-0 mt-0.5"></i>
+                                Identified functional loopholes and performance bottlenecks.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950/30 px-8 py-4 border-t border-slate-700">
+                        <span class="text-xs font-medium text-slate-500">Domain: Information Mgmt</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="py-20 bg-slate-950">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-2xl font-bold text-white mb-8 flex items-center">
+                <span class="bg-indigo-500 w-2 h-8 mr-4 rounded-full shadow-[0_0_15px_rgba(99,102,241,0.5)]"></span> Education
+            </h2>
+            <div class="bg-slate-900 border-l-4 border-indigo-500 pl-6 py-4 rounded-r-lg shadow-sm">
+                <h3 class="text-xl font-bold text-white">B.E. in Electronics & Telecommunication</h3>
+                <p class="text-lg text-slate-400 mt-1">Shri Sant Gajanan Maharaj College of Engineering, Shegaon</p>
+                <div class="flex flex-wrap items-center mt-4 text-sm text-slate-500 gap-6">
+                    <span class="flex items-center"><span class="font-bold mr-1 text-indigo-400">Year:</span> 2023</span>
+                    <span class="flex items-center"><span class="font-bold mr-1 text-indigo-400">CGPA:</span> 8.24</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-black text-white border-t border-slate-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Ensure Quality?</h2>
+            <p class="text-slate-400 mb-10 text-lg">
+                I am currently available for new opportunities. Feel free to reach out if you're looking for a QA Specialist who bridges the gap between manual testing and AI automation.
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-6 mb-12">
+                <a href="mailto:vaishubgawande@gmail.com" class="flex items-center justify-center px-8 py-4 bg-indigo-600 rounded-xl font-bold hover:bg-indigo-500 transition-all transform hover:-translate-y-1 shadow-lg shadow-indigo-600/20">
+                    <i data-lucide="mail" class="mr-3 w-5 h-5"></i>
+                    Send Email
+                </a>
+                <a href="https://www.linkedin.com/in/vaishnavi-gawande-ba7477193/" class="flex items-center justify-center px-8 py-4 bg-slate-900 border border-slate-800 rounded-xl font-bold hover:bg-slate-800 transition-all transform hover:-translate-y-1 hover:border-indigo-500/30">
+                    <i data-lucide="linkedin" class="mr-3 w-5 h-5 text-indigo-400"></i>
+                    LinkedIn Profile
+                </a>
+                <a href="tel:+91-9370136667" class="flex items-center justify-center px-8 py-4 bg-slate-900 border border-slate-800 rounded-xl font-bold hover:bg-slate-800 transition-all transform hover:-translate-y-1 hover:border-indigo-500/30">
+                    <span class="mr-3 font-mono text-xl">📞</span>
+                    +91-9370136667
+                </a>
+            </div>
+
+            <div class="border-t border-slate-900 pt-8 text-slate-600 text-sm">
+                © <span id="year"></span> Vaishnavi Gawande. All rights reserved.
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Set Current Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Navbar Scroll Effect and Active Link
+        const navbar = document.getElementById('navbar');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        window.addEventListener('scroll', () => {
+            // Background Blur & Border logic for Dark Mode
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-slate-950/90', 'backdrop-blur-md', 'border-slate-800', 'py-4');
+                navbar.classList.remove('py-6', 'bg-transparent', 'border-transparent');
+            } else {
+                navbar.classList.remove('bg-slate-950/90', 'backdrop-blur-md', 'border-slate-800', 'py-4');
+                navbar.classList.add('py-6', 'bg-transparent', 'border-transparent');
+            }
+
+            // Active Link Highlighting
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-indigo-400', 'font-bold');
+                link.classList.add('text-slate-400');
+                if (link.dataset.section === current) {
+                    link.classList.remove('text-slate-400');
+                    link.classList.add('text-indigo-400', 'font-bold');
+                }
+            });
+        });
+
+        // Mobile Menu Toggle
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenu.classList.contains('hidden') ? 'menu' : 'x';
+            mobileMenuBtn.innerHTML = `<i data-lucide="${icon}" class="w-6 h-6"></i>`;
+            lucide.createIcons();
+        });
+
+        // Close mobile menu on click
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.innerHTML = `<i data-lucide="menu" class="w-6 h-6"></i>`;
+                lucide.createIcons();
+            });
+        });
+    </script>
+</body>
+
+</html>
+
